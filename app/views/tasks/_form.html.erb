@@ -16,10 +16,6 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :category_id %><br>
-    <%= f.number_field :category_id %>
-  </div>
-  <div class="field">
     <%= f.label :due_date %><br>
     <%= f.datetime_select :due_date %>
   </div>
@@ -27,6 +23,8 @@
     <%= f.label :done %><br>
     <%= f.check_box :done %>
   </div>
+
+  <%= f.hidden_field :category_id, value: params[:cat] %>
 
   <div class="actions">
     <%= f.submit %>

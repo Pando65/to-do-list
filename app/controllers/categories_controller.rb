@@ -13,6 +13,10 @@ class CategoriesController < ApplicationController
   def show
   end
 
+  def current_category
+    raise CURRENT_CATEGORY.inspect
+  end
+
   # GET /categories/new
   def new
     @category = Category.new

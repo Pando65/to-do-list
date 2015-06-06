@@ -1,8 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Tasks</h1>
-
-<table>
+<table class="table table-stripped">
   <thead>
     <tr>
       <th>Name</th>
@@ -20,8 +19,7 @@
         <td><%= task.category_id %></td>
         <td><%= task.due_date %></td>
         <td><%= task.done %></td>
-        <td><%= link_to 'Show', task %></td>
-        <td><%= link_to 'Edit', edit_task_path(task) %></td>
+        <td><%= link_to 'Edit', edit_task_path(task, cat: params[:cat]) %></td>
         <td><%= link_to 'Destroy', task, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -30,4 +28,6 @@
 
 <br>
 
-<%= link_to 'New Task', new_task_path %>
+<button type="button" class="btn btn-default"><%= link_to 'Back', categories_path(cat: params[:cat]) %></button>
+
+<button type="button" class="btn btn-default"><%= link_to 'New Task', new_task_path(cat: params[:cat]) %></button>
