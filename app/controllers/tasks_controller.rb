@@ -8,7 +8,7 @@ class TasksController < ApplicationController
     #@tasks = @tasks.where(category_id: params[:cat]) if params[:cat]
 
     if params[:cat].present?
-      @tasks = Task.where(category_id: params[:cat])
+      @tasks = Task.where(category_id: params[:cat], done: false)
     else
       @tasks = Task.all
     end
